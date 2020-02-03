@@ -1,0 +1,26 @@
+.timer {
+    text-align: center;
+    font-size: 70px;
+    font-family: Castellar;
+    font-weight: 600;
+}
+
+.container-for-buttons {
+    display: block;
+    text-align: center;
+}
+
+.buttons {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.buttons .btn {
+    font-size: 25px;
+}
+
+.container-for-timer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}

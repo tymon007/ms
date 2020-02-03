@@ -1,0 +1,12 @@
+#file_load_image {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    /* This rule is very important, please do not ignore this! */
+}
+
+.display-none {
+    display: none;
+}
