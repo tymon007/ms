@@ -7,22 +7,15 @@
 <<<<<<< HEAD
     {% if user %}
     <p>Nazwa użytkownika: {{ user.username }}</p>
-    <p>E-mail: {{ user.email }}</p>
-    <p>Ile osób mieszka ze mną: {{ user.howManyPeople }}</p>
+    <p>Username hash: {{ }}</p>
     {% endif %}
 =======
     <div class="alert alert-primary" style="font-size: 20px;">
         {% if user %}
         <br>
-        <p>Nazwa użytkownika: {{ user.username }}</p>
+        <p>Username: {{ user.username }}</p>
         <br>
-        <hr>
-        <br>
-        <p>E-mail: {{ user.email }}</p>
-        <br>
-        <hr>
-        <br>
-        <p>Ile osób mieszka ze mną: {{ user.howManyPeople }}</p>
+        <p>Username hash: {{}}</p>
         <br>
         {% endif %}
     </div>
