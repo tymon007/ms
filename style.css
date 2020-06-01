@@ -1,14 +1,26 @@
-.content-title {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 2rem;
-    text-align: center;
+.container_body .feature .informations {
+    font-size: 1rem;
 }
 
-.log_in {
-    margin-top: 50px;
+.container_body .feature .informations .informations_menu {
+    display: block;
+    font-size: 1.5rem;
+    padding-left: 20px;
 }
 
-.logElement {
-    width: 95px;
+.container_body .feature .informations .informations_information {
+    display: block;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.container_body .feature .informations .informations_information .informations_information_title {
+    display: block;
+    font-size: 1.5rem;
+    padding-left: 20px;
+}
+
+.container_body .feature.informations .informations_information .informations_information_content {
+    display: block;
+    font-size: 1rem;
 }
