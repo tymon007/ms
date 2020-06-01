@@ -1,6 +1,6 @@
 <?php
 try {
-    $db = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, DBUSER, DBPASSWORD);
+    $db = new PDO('mysql:host=localhost;dbname=apka', 'root', 'root');
 } catch (PDOException $e) {
     print "Ошибка соединеия!: " . $e->getMessage();
     exit;

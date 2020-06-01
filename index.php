@@ -2,22 +2,9 @@
 session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/service.php');
 
-if (MAINTENANCE) {
-    header('Location: ' . ADDRESS_M . '/_EXEPTIONS_/maintenance.php');
-    exit;
-}
-
-$BDfunc = new Me("");
-$lang = isset($_GET['lang']) ? $_GET['lang'] : 'eng';
-
 if (isset($_SESSION['login'])) {
-    header('Location: ' . ADDRESS_M . '/me');
+    header('Location: /mail');
     exit;
-}
-
-if ($lang != 'eng' &&  $lang != 'pol' && $lang != 'rus') {
-    $error = 'Wrong language';
-    $lang = 'eng';
 }
 
 if (isset($_POST['submit']) && !empty($_POST['submit'])) {
@@ -25,30 +12,35 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
     if (count($user) != 0) {
         if (md5(md5($_POST['password']) . $user[0]['salt']) == $user[0]['password']) {
             $_SESSION['login'] = $_POST['login'];
-            if ($_GET['thispage'] !== NULL) header('Location: ' . ADDRESS_M . $_GET['thispage']);
+            if ($_GET['thispage'] !== NULL) header('Location: /' . ADDRESS_M . $_GET['thispage']);
             else header('Location: ' . ADDRESS_M . '/me');
             exit;
         }
     }
 }
-
-global $arrayLang;
-$arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/1headNotLogged.php');
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    function head_title()
-    {
-        global $arrayLang;
-        echo $arrayLang['Title']['_main_'] . ' | RoleGame';
-    }
-    ?>
+    <title><?php head_title(); ?></title>
+    
+    <link rel="icon" type="images/ico" href="<?php echo ADDRESS_DATA; ?>/img/fav.ico" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="/_FRAMEWORKS_/bootstrap/css/bootstrap.min.css" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/_MAIN_/style.css" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+    
+    <script src="/_FRAMEWORKS_/jquery/dist/jquery.js"></script>
+    <script src="/_FRAMEWORKS_/popper.js/dist/umd/popper.js"></script>
+    <script src="/_FRAMEWORKS_/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/b9bdbd120a.js"></script>
+    <script src="/_MAIN_/script.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
