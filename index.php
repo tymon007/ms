@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/service.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/service.php');
 
 if (MAINTENANCE) {
     header('Location: ' . ADDRESS_M . '/_EXEPTIONS_/maintenance.php');
