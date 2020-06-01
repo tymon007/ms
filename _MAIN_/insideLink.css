@@ -1,0 +1,12 @@
+.insdlink {
+    color: rgb(0, 119, 158) !important;
+    text-decoration: underline;
+}
+
+.insdlink::before {
+    content: "<";
+}
+
+.insdlink::after {
+    content: ">";
+}
