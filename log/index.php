@@ -3,7 +3,7 @@ session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/service.php');
 
 if (MAINTENANCE) {
-    header('Location: ' . ADDRESS_M . '/_EXEPTIONS_/maintenance.php');
+    header('Location: /_EXEPTIONS_/maintenance.php');
     exit;
 }
 
@@ -11,7 +11,7 @@ $BDfunc = new Me("");
 $lang = isset($_GET['lang']) ? $_GET['lang'] : 'eng';
 
 if (isset($_SESSION['login'])) {
-    header('Location: ' . ADDRESS_M . '/me');
+    header('Location: /mail');
     exit;
 }
 
@@ -21,12 +21,12 @@ if ($lang != 'eng' &&  $lang != 'pol' && $lang != 'rus') {
 }
 
 if (isset($_POST['submit']) && !empty($_POST['submit'])) {
-    $user = $BDfunc->select('users', ['password', 'salt'], ['login' => $_POST['login']]);
+    $user = $BDfunc->select('users', ['password', 'salt'], ['username' => $_POST['login']]);
     if (count($user) != 0) {
         if (md5(md5($_POST['password']) . $user[0]['salt']) == $user[0]['password']) {
             $_SESSION['login'] = $_POST['login'];
-            if ($_GET['thispage'] !== NULL) header('Location: ' . ADDRESS_M . $_GET['thispage']);
-            else header('Location: ' . ADDRESS_M . '/me');
+            if ($_GET['thispage'] !== NULL) header('Location: ' . $_GET['thispage']);
+            else header('Location: /mail');
             exit;
         }
     }
@@ -71,31 +71,6 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
             </div>
 
             <?php
-            if (isset($_GET['key'])) {
-                $myLogin = $BDfunc->select('users', ['login'], ['active_hex' => $_GET['key']]);
-                if (count($myLogin) == 0) {
-                    echo '<div class="space"></div>';
-                    echo '<div class="font-size-normal">';
-                    echo '    <div class="alert alert-danger">';
-                    echo '        Activation key is not correct!';
-                    echo '    </div>';
-                    echo '</div>';
-                } else {
-                    $BDfunc->update('users', ['active_hex' => '', 'is_activated' => 1], ['login' => $myLogin[0]['login']]);
-                    $title = 'Your account at http://rolegame.com has been successfully activated.';
-                    $message = 'Congratulations, your account at http://rolegame.com has been successfully activated.';
-                    sendMessageMail($myLogin[0]['_m_login'], EMAIL, $title, $message);
-                    echo '<div class="space"></div>';
-                    echo '<div class="font-size-normal">';
-                    echo '    <div class="alert alert-light">';
-                    echo '        Your account has been successfully activated. Log in, please.';
-                    echo '    </div>';
-                    echo '</div>';
-                }
-            }
-            ?>
-
-            <?php
             $link = "";
             if (isset($_GET['notLogin']) && $_GET['notLogin'] == true) {
                 $link = $_SERVER['PHP_SELF'] . '?lang=' . $lang . '&thispage=' . $_GET['thisPage'];
@@ -110,12 +85,12 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
 
             <?php
             if (isset($_POST['submit']) && !empty($_POST['submit'])) {
-                $user = $BDfunc->select('users', ['password', 'salt'], ['login' => $_POST['login']]);
+                $user = $BDfunc->select('users', ['password', 'salt'], ['username' => $_POST['login']]);
                 if (count($user) == 0) {
                     echo '<div class="space"></div>';
                     echo '<div class="font-size-normal">';
                     echo '    <div class="alert alert-wrong">';
-                    echo '        Account with login <strong>' . $_POST['email'] . '</strong> is not activated or not registered!';
+                    echo '        Account with login <strong>' . $_POST['email'] . '</strong> is not registered!';
                     echo '    </div>';
                     echo '</div>';
                 } else {
@@ -134,10 +109,10 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
                     <div class="input-group mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text logElement" id="inputGroupPrepend3">E-mail</span>
+                                <span class="input-group-text logElement" id="inputGroupPrepend3">Username</span>
                             </div>
 
-                            <input type="email" name="login" value="" placeholder="" autocomplete="off" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" name="login" value="" placeholder="" autocomplete="off" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
 
@@ -166,7 +141,7 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
 
         <div class="pseudo_footer"></div>
 
-        <?php require_once '../_PARTS_/3footerNotLogged.php'; ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/3footerNotLogged.php'); ?>
     </div>
 </body>
 
