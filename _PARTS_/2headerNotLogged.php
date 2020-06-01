@@ -1,7 +1,7 @@
 <div class="header">
     <div class="logo">
         <div class="my_link" data-href="/?lang=<?php echo $lang; ?>">
-            <img src="<?php echo ADDRESS_DATA; ?>/img/logo_one.svg" width="40px">
+            <img src="/img/logo_one.svg" width="40px">
         </div>
     </div>
 

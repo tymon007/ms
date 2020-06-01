@@ -4,7 +4,7 @@
 
 <title><?php head_title(); ?></title>
 
-<link rel="icon" type="images/ico" href="<?php echo ADDRESS_DATA; ?>/img/fav.ico" sizes="16x16">
+<link rel="icon" type="images/ico" href="/img/fav.ico" sizes="16x16">
 <link rel="stylesheet" type="text/css" href="/_FRAMEWORKS_/bootstrap/css/bootstrap.min.css" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/_MAIN_/style.css" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">

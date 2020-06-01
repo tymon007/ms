@@ -7,15 +7,15 @@
 
     <div class="lang">
         <div class="my_link" data-href="?lang=eng">
-            <img src="<?php echo ADDRESS_DATA; ?>/img/flagENG.png">
+            <img src="/img/flagENG.png">
         </div>
 
         <div class="my_link" data-href="?lang=pol">
-            <img src="<?php echo ADDRESS_DATA; ?>/img/flagPOL.png">
+            <img src="/img/flagPOL.png">
         </div>
 
         <div class="my_link" data-href="?lang=rus">
-            <img src="<?php echo ADDRESS_DATA; ?>/img/flagRUS.png">
+            <img src="/img/flagRUS.png">
         </div>
     </div>
 </div>
