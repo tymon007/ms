@@ -161,7 +161,7 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
 
         <div class="pseudo_footer"></div>
 
-        <?php require_once '../_PARTS_/3footer.php'; ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/3footer.php'); ?>
     </div>
 </body>
 

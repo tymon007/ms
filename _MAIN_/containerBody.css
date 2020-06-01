@@ -1,0 +1,128 @@
+.container_body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container_body .pseudo_header {
+    height: 50px;
+}
+
+.container_body .header {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    /* background-color: rgb(65, 10, 136); */
+    background-color: rgb(175, 37, 37);
+}
+
+.container_body .header .logo, .container_body .header .menu {
+    display: inline-block;
+    vertical-align: middle;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.container_body .header .logo {
+    width: 20vw;
+    float: left;
+}
+
+.container_body .header .menu {
+    width: 70vw;
+    float: right;
+}
+
+.container_body .header .menu .container_for_buttons .buttElement {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.container_body .header .menu .container_for_buttons .buttElement:last-child {
+    margin-right: 0;
+}
+
+.container_body .feature {
+    width: 100vw;
+    min-height: 10vh;
+    padding: 10px;
+}
+
+.container_body .feature .intro {
+    padding: 10px;
+    text-align: center;
+}
+
+.container_body .feature .intro .title {
+    font-style: italic;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.container_body .feature .intro .description {
+    font-size: 1rem;
+}
+
+.container_body .pseudo_footer {
+    height: 100px;
+}
+
+.container_body .footer {
+    position: fixed;
+    z-index: 9000;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 40px;
+    max-height: 100px;
+    background-color: rgb(194, 63, 63);
+    text-align: center;
+}
+
+.container_body .footer .lang {
+    height: 40px;
+    padding: 5px 0;
+}
+
+.container_body .footer .lang .my_link {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.container_body .footer .lang .my_link:last-child {
+    margin-right: 0;
+}
+
+.container_body .footer .lang .my_link img {
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5px 0.5px black;
+}
+
+.container_body .footer .other {
+    background-color: rgb(240, 240, 240);
+    color: rgb(116, 116, 116);
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+}
+
+.container_body .footer .other .other-column {
+    width: 100px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.75rem;
+}
+
+.container_body .footer .other .other-column:last-child {
+    margin-right: 0;
+}

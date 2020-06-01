@@ -1,0 +1,63 @@
+* {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    background-color: rgb(254, 254, 254);
+}
+
+a, a:hover, a:focus, a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+.valid-feedback, .invalid-feedback {
+    font-size: 0.8rem;
+    display: block;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.my_link {
+    display: inline;
+}
+
+.my_btn {
+    background-color: rgb(175, 37, 37) !important;
+    border-color: rgb(255, 255, 255) !important;
+    color: white;
+}
+
+.space {
+    display: block;
+    height: 30px;
+}
+
+.display-none {
+    display: none;
+}
+
+.font-size-normal {
+    font-size: 1rem;
+}
+
+.fa {
+    color: #495057;
+}

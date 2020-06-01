@@ -1,0 +1,172 @@
+.tip {
+    position: relative;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    border: 2px solid steelblue !important;
+    background-color: white !important;
+    text-align: center !important;
+    font-style: normal !important;
+    line-height: 0.5 !important;
+    margin-left: 10px !important;
+    font-size: 16px !important;
+}
+
+.tip:hover {
+    cursor: pointer;
+}
+
+.tip:hover .tip-description {
+    display: block;
+}
+
+.tip-description {
+    display: none;
+    width: 200px;
+    min-height: 40px;
+    line-height: 20px;
+    border: 1px solid steelblue;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: -17px;
+    background: steelblue;
+    color: #fff;
+    box-shadow: 0 0 7px #000;
+    font-size: 20px;
+}
+
+.tip-description::before, .tip-description::after {
+    content: '';
+    position: absolute;
+    background: steelblue;
+    left: 20px;
+    bottom: -11px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 7px #000;
+    z-index: -1;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.tip-description::before {
+    z-index: 1;
+    box-shadow: none;
+}
+
+.tip.tip-primary {
+    border: 2px solid #007bff;
+}
+
+.tip.tip-primary .tip-description {
+    border: 1px solid #007bff;
+    background: #007bff;
+}
+
+.tip.tip-primary .tip-description::after, .tip.tip-primary .tip-description::before {
+    border: 1px solid #007bff;
+    background: #007bff;
+}
+
+.tip.tip-secondary {
+    border: 2px solid #6c757d;
+}
+
+.tip.tip-secondary .tip-description {
+    border: 1px solid #6c757d;
+    background: #6c757d;
+}
+
+.tip.tip-secondary .tip-description::after, .tip.tip-secondary .tip-description::before {
+    border: 1px solid #6c757d;
+    background: #6c757d;
+}
+
+.tip.tip-success {
+    border: 2px solid #28a745;
+}
+
+.tip.tip-success .tip-description {
+    border: 1px solid #28a745;
+    background: #28a745;
+}
+
+.tip.tip-success .tip-description::after, .tip.tip-success .tip-description::before {
+    border: 1px solid #28a745;
+    background: #28a745;
+}
+
+.tip.tip-danger {
+    border: 2px solid #dc3545;
+}
+
+.tip.tip-danger .tip-description {
+    border: 1px solid #dc3545;
+    background: #dc3545;
+}
+
+.tip.tip-danger .tip-description::after, .tip.tip-danger .tip-description::before {
+    border: 1px solid #dc3545;
+    background: #dc3545;
+}
+
+.tip.tip-warning {
+    border: 2px solid #ffc107;
+}
+
+.tip.tip-warning .tip-description {
+    border: 1px solid #ffc107;
+    background: #ffc107;
+}
+
+.tip.tip-warning .tip-description::after, .tip.tip-warning .tip-description::before {
+    border: 1px solid #ffc107;
+    background: #ffc107;
+}
+
+.tip.tip-info {
+    border: 2px solid #17a2b8;
+}
+
+.tip.tip-info .tip-description {
+    border: 1px solid #17a2b8;
+    background: #17a2b8;
+}
+
+.tip.tip-info .tip-description::after, .tip.tip-info .tip-description::before {
+    border: 1px solid #17a2b8;
+    background: #17a2b8;
+}
+
+.tip.tip-lite {
+    border: 2px solid #f8f9fa;
+}
+
+.tip.tip-lite .tip-description {
+    border: 1px solid #f8f9fa;
+    background: #f8f9fa;
+}
+
+.tip.tip-lite .tip-description::after, .tip.tip-lite .tip-description::before {
+    border: 1px solid #f8f9fa;
+    background: #f8f9fa;
+}
+
+.tip.tip-dark {
+    border: 2px solid #343a40;
+}
+
+.tip.tip-dark .tip-description {
+    border: 1px solid #343a40;
+    background: #343a40;
+}
+
+.tip.tip-dark .tip-description::after, .tip.tip-dark .tip-description::before {
+    border: 1px solid #343a40;
+    background: #343a40;
+}
