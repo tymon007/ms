@@ -1,0 +1,54 @@
+.groupBlock {
+    border-bottom: 1px solid black;
+}
+
+.editBlock {
+    font-size: 1rem;
+    padding: 10px 0;
+}
+
+.convImage {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    background-color: rgb(240, 240, 240);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 75% auto;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 50%;
+}
+
+.textElem {
+    display: block;
+    min-height: 40px;
+    max-height: 120px;
+    line-height: 30px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    padding: 0 10px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+#invalidConvName {
+    margin: 0 auto;
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell-1, .table-cell-2 {
+    display: table-cell;
+}
+
+.table-cell-1, .table-cell-1 label {
+    width: 100%;
+}
