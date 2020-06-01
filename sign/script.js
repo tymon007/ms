@@ -4,64 +4,17 @@ $(document).ready(function () {
 
         evt.preventDefault();
 
-        var error = 0;
-
-        // first name and last name
-        var firstName = $('input[name="firstName"]')[0].value;
-        var lastName = $('input[name="lastName"]')[0].value;
-        if (firstName != "" || lastName != "") {
-
-            var firstNameLetters = firstName.split("");
-            for (var i = 0; i < firstNameLetters.length; i++) {
-                var s = firstNameLetters[i];
-                if (s == 0 || s == 1 || s == 2 || s == 3 || s == 4 || s == 5 || s == 6 || s == 7 || s == 8 || s == 9 ||
-                    s == "!" || s == "@" || s == "#" || s == "$" || s == "%" || s == "^" || s == "&" || s == "*" || s == "(" || s == ")" ||
-                    s == "[" || s == "]" || s == "{" || s == "}" || s == ";" || s == ":" || s == "'" || s == "\"" || s == "<" || s == ">" ||
-                    s == "," || s == "." || s == "/" || s == "?" || s == "\\" || s == "|" || s == "-" || s == "_" || s == "=" || s == "+") {
-                    error += 1;
-                    break;
-                }
-            }
-
-            var lastNameLetters = lastName.split("");
-            for (var i = 0; i < lastNameLetters.length; i++) {
-                var s = lastNameLetters[i];
-                if (s == 0 || s == 1 || s == 2 || s == 3 || s == 4 || s == 5 || s == 6 || s == 7 || s == 8 || s == 9 ||
-                    s == "!" || s == "@" || s == "#" || s == "$" || s == "%" || s == "^" || s == "&" || s == "*" || s == "(" || s == ")" ||
-                    s == "[" || s == "]" || s == "{" || s == "}" || s == ";" || s == ":" || s == "'" || s == "\"" || s == "<" || s == ">" ||
-                    s == "," || s == "." || s == "/" || s == "?" || s == "\\" || s == "|" || s == "-" || s == "_" || s == "=" || s == "+") {
-                    error += 1;
-                    break;
-                }
-            }
-
-            if (error == 0) {
-                $('input[name="firstName"]').removeClass("is-invalid").addClass("is-valid");
-                $('input[name="lastName"]').removeClass("is-invalid").addClass("is-valid");
-                $("#invalidName").attr("class", "valid-feedback")
-                document.getElementById("invalidName").innerHTML = "Your names are correct!";
-            } else {
-                $('input[name="firstName"]').removeClass("is-valid").addClass("is-invalid");
-                $('input[name="lastName"]').removeClass("is-valid").addClass("is-invalid");
-                $("#invalidName").attr("class", "invalid-feedback")
-                document.getElementById("invalidName").innerHTML = "Your name consists of not allowed symbols!";
-            }
-        } else {
-            $('input[name="firstName"]').removeClass("is-valid").addClass("is-invalid");
-            $('input[name="lastName"]').removeClass("is-valid").addClass("is-invalid");
-            $("#invalidName").attr("class", "invalid-feedback")
-            document.getElementById("invalidName").innerHTML = "Type in your names!";
-        }
+        var error = 0;       
 
         // free Email
-        var email = document.querySelector('input[name="login"]').value;
-        if (email != "") {
-            $.post("freeEmail.php", { text: email }, function (m) {
+        var username = document.querySelector('input[name="login"]').value;
+        if (username != "") {
+            $.post("freeLogin.php", { text: username }, function (m) {
                 console.log(m)
                 if (m != 0) {
                     $('input[name="login"]').removeClass("is-valid").addClass("is-invalid");
                     $("#busyEmail").attr("class", "invalid-feedback")
-                    document.getElementById("busyEmail").innerHTML = "This email is busy!";
+                    document.getElementById("busyEmail").innerHTML = "This username is busy!";
                     document.getElementById("incorrectEmail").innerHTML = "";
                     error += 1;
                 } else {
@@ -69,16 +22,16 @@ $(document).ready(function () {
                     $("#busyEmail").attr("class", "valid-feedback")
                     document.getElementById("busyEmail").innerHTML = "This email is free!";
                     if (email != "") {
-                        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                        var reg = /^([A-Za-z0-9_\-\.])+$/;
                         if (reg.test(email) == false) {
                             $('input[name="login"]').removeClass("is-valid").addClass("is-invalid");
                             $("#incorrectEmail").attr("class", "invalid-feedback")
-                            document.getElementById("incorrectEmail").innerHTML = "This email is incorrect!";
+                            document.getElementById("incorrectEmail").innerHTML = "This username is incorrect!";
                             error += 1;
                         } else {
                             $('input[name="login"]').removeClass("is-invalid").addClass("is-valid");
                             $("#incorrectEmail").attr("class", "valid-feedback")
-                            document.getElementById("incorrectEmail").innerHTML = "This email is correct!";
+                            document.getElementById("incorrectEmail").innerHTML = "This username is correct!";
                         }
                     }
                 }
@@ -86,7 +39,7 @@ $(document).ready(function () {
         } else {
             $('input[name="login"]').removeClass("is-valid").addClass("is-invalid");
             $("#incorrectEmail").attr("class", "invalid-feedback")
-            document.getElementById("incorrectEmail").innerHTML = "Type in your email!";
+            document.getElementById("incorrectEmail").innerHTML = "Type in your login!";
             error += 1;
         }
 
@@ -122,70 +75,6 @@ $(document).ready(function () {
             error += 1;
         }
 
-        //valid Date
-        var day = $("#day option:selected").attr("value");
-        var month = $("#month option:selected").attr("value");
-        var year = $("#year option:selected").attr("value");
-        if (day != undefined && month != undefined && year != undefined) {
-            if (month == 2) {
-                if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-                    $("#day").removeClass("is-invalid").addClass("is-valid");
-                    $("#month").removeClass("is-invalid").addClass("is-valid");
-                    $("#year").removeClass("is-invalid").addClass("is-valid");
-                    $("#wrongDate").attr("class", "valid-feedback")
-                    document.getElementById("wrongDate").innerHTML = "Date is correct!";
-                } else {
-                    $("#day").removeClass("is-invalid").addClass("is-valid");
-                    $("#month").removeClass("is-invalid").addClass("is-valid");
-                    $("#year").removeClass("is-valid").addClass("is-invalid");
-                    $("#wrongDate").attr("class", "invalid-feedback")
-                    document.getElementById("wrongDate").innerHTML = "Invalid date!";
-                    error += 1;
-                }
-            } else {
-                $("#day").removeClass("is-invalid").addClass("is-valid");
-                $("#month").removeClass("is-invalid").addClass("is-valid");
-                $("#year").removeClass("is-invalid").addClass("is-valid");
-                $("#wrongDate").attr("class", "valid-feedback")
-                document.getElementById("wrongDate").innerHTML = "Date is correct!";
-            }
-        } else if (day == 30) {
-            if (month == 2) {
-                $("#day").removeClass("is-invalid").addClass("is-valid");
-                $("#month").removeClass("is-valid").addClass("is-invalid");
-                $("#year").removeClass("is-invalid").addClass("is-valid");
-                $("#wrongDate").attr("class", "invalid-feedback")
-                document.getElementById("wrongDate").innerHTML = "Invalid date!";
-                error += 1;
-            } else {
-                $("#day").removeClass("is-invalid").addClass("is-valid");
-                $("#month").removeClass("is-invalid").addClass("is-valid");
-                $("#year").removeClass("is-invalid").addClass("is-valid");
-                $("#wrongDate").attr("class", "valid-feedback")
-                document.getElementById("wrongDate").innerHTML = "Date is correct!";
-            }
-        } else if (day == 31) {
-            if (month == 2 || month == 4 || month == 6 || month == 9 || month == 11) {
-                $("#day").removeClass("is-invalid").addClass("is-valid");
-                $("#month").removeClass("is-valid").addClass("is-invalid");
-                $("#year").removeClass("is-invalid").addClass("is-valid");
-                $("#wrongDate").attr("class", "invalid-feedback")
-                document.getElementById("wrongDate").innerHTML = "Invalid date!";
-                error += 1;
-            } else {
-                $("#day").removeClass("is-invalid").addClass("is-valid");
-                $("#month").removeClass("is-invalid").addClass("is-valid");
-                $("#year").removeClass("is-invalid").addClass("is-valid");
-                $("#wrongDate").attr("class", "valid-feedback")
-                document.getElementById("wrongDate").innerHTML = "Date is correct!";
-            }
-        } else {
-            $("#day").removeClass("is-invalid").addClass("is-valid");
-            $("#month").removeClass("is-invalid").addClass("is-valid");
-            $("#year").removeClass("is-invalid").addClass("is-valid");
-            $("#wrongDate").attr("class", "valid-feedback")
-            document.getElementById("wrongDate").innerHTML = "Date is correct!";
-        }
         setTimeout(function () {
             if (error == 0) {
                 $("#origin-submit").click();
