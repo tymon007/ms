@@ -3,7 +3,7 @@ session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/service.php');
 
 if (MAINTENANCE === TRUE) {
-    header('Location: ' . ADDRESS_M . '/_EXEPTIONS_/maintenance.php');
+    header('Location: /_EXEPTIONS_/maintenance.php');
     exit;
 }
 
@@ -11,7 +11,7 @@ $BDfunc = new Me("");
 $lang = isset($_GET['lang']) ? $_GET['lang'] : 'eng';
 
 if (isset($_SESSION['login'])) {
-    header('Location: ' . ADDRESS_M . '/me');
+    header('Location: /mail');
     exit;
 }
 

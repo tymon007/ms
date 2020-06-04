@@ -1,0 +1,39 @@
+.featureLeft {
+    display: inline-block;
+    background-color: rgba(33, 72, 201, 0.795);
+    width: 450px;
+    height: 750px;
+    vertical-align: top;
+    font-size: 50px;
+}
+
+.photo {
+    display: inline-block;
+    background-color: rgb(84, 96, 133, 0.795);
+    width: 450px;
+    height: 450px;
+    vertical-align: top;
+}
+
+#photo {
+    width: 450px;
+    height: 450px;
+    border-radius: 28.481012658vh 28.481012658vh;
+    background-color: rgb(163, 50, 216);
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.featureRight {
+    display: inline-block;
+    background-color: rgb(151, 201, 33, 0.795);
+    width: 450px;
+    height: 750px;
+    vertical-align: top;
+}
+
+.footer {
+    width: 100%;
+    height: 5.56962025312vh;
+}

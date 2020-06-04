@@ -26,7 +26,7 @@ $chat = $me->select('chats', ['*'], ['id' => $_GET['id']])[0];
         <div class="header">
             <div class="logo">
                 <div class="my_link" data-href="/mail/">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/back.svg" width="40px">
+                    <img src="/img/back.svg" width="40px">
                 </div>
             </div>
 
@@ -38,7 +38,7 @@ $chat = $me->select('chats', ['*'], ['id' => $_GET['id']])[0];
 
                     <div class="buttElement mDropdown">
                         <div class="mDropdownTit">
-                            <img src="<?php echo ADDRESS_DATA; ?>/img/more_vert.svg" width="40px">
+                            <img src="/img/more_vert.svg" width="40px">
                         </div>
 
                         <div class="mDropdownCon">
@@ -65,10 +65,10 @@ $chat = $me->select('chats', ['*'], ['id' => $_GET['id']])[0];
             <div class="messages" id="messages"></div>
 
             <div class="input">
-                <!-- <div class="attach" style="background-image: url('<?php echo ADDRESS_DATA . '/img/paper_clip.svg'; ?>')"></div> -->
+                <!-- <div class="attach" style="background-image: url('<?php echo '/img/paper_clip.svg'; ?>')"></div> -->
                 <textarea class="writeMessage autoresizeTextarea" placeholder="Enter message" id="input"></textarea>
-                <!-- <div class="emoji" style="background-image: url('<?php echo ADDRESS_DATA . '/img/emoji.png'; ?>')"></div> -->
-                <div class="send" style="background-image: url('<?php echo ADDRESS_DATA . '/img/sent.svg'; ?>')" id="send"></div>
+                <!-- <div class="emoji" style="background-image: url('<?php echo '/img/emoji.png'; ?>')"></div> -->
+                <div class="send" style="background-image: url('<?php echo '/img/sent.svg'; ?>')" id="send"></div>
             </div>
 
             <div class='display-none' id='DATA-TO-SEND-MESS' data-chat-id="<?php echo $_GET['id']; ?>"></div>

@@ -24,22 +24,22 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
         <div class='feature'>
             <div class="activities">
                 <div class="my_link" data-href="new">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/message.svg" width="40px">
+                    <img src="/img/message.svg" width="40px">
                 </div>
 
                 <div class="my_link" data-href="">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/trash.svg" width="40px">
+                    <img src="/img/trash.svg" width="40px">
                 </div>
 
                 <div class="my_link" data-href="">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/block.svg" width="40px">
+                    <img src="/img/block.svg" width="40px">
                 </div>
             </div>
 
             <div class="cont_search_conv">
                 <input type="search" placeholder="Search" class="search_conv">
                 <div class="search_icon">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/search.svg" width="40px">
+                    <img src="/img/search.svg" width="40px">
                 </div>
             </div>
 
@@ -138,7 +138,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
                     $lastMessage = $me->select('messages', ['*'], ['chatID' => $mychat[$i]['id']], ['id' => -1], 1)[0];
 
                     echo '<div class="message my_link" data-href="conv?id=' . $mychat[$i]['id'] . '">';
-                    echo '    <div class="image" style="background-image: url(\'' . ADDRESS_DATA . $image . '\')"></div>';
+                    echo '    <div class="image" style="background-image: url(\'' . $image . '\')"></div>';
                     echo '    <div class="other">';
                     echo '        <div class="titleAndTime">';
                     echo '            <div class="title">' . $title . '</div>';

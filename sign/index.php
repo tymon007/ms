@@ -49,9 +49,11 @@ if (isset($_POST['submit'])) {
         if ($error == 0) {
             $salt = salt();
             $BDfunc->insert('users', [
-                'username' => $_POST['login'],
+                'login' => $_POST['login'],
                 'password' => md5(md5($_POST['password1']) . $salt),
-                'salt' => $salt
+                'salt' => $salt,
+                'lang' => $lang,
+                'date_register' => time()
             ]);
             $_key_reg_ = true;
         } else {

@@ -34,7 +34,7 @@ for ($i = 0; $i < count($messages); $i++) {
         echo '</div>';
     } else {
         echo '<div class="message">';
-        echo '    <div class="image" style="background-image: url(\'' . ADDRESS_DATA . $image . '\')"></div>';
+        echo '    <div class="image" style="background-image: url(\'' . $image . '\')"></div>';
         echo '    <div class="other">';
         echo '        <div class="name-time">';
         echo '            <div class="name">' . $names . '</div>';

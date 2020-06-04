@@ -25,31 +25,32 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
             <div class="cont_search_user">
                 <input type="search" placeholder="Search" class="search_user">
                 <div class="search_icon">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/search.svg" width="40px">
+                    <img src="/img/search.svg" width="40px">
                 </div>
             </div>
 
             <div class="users">
                 <?php
-                $users = $me->select('users', ['firstName', 'lastName', 'image', 'id', 'gender']);
+                $users = $me->select('users', ['login', 'id']);
                 for ($i = 0; $i < count($users); $i++) {
                     $image = $users[$i]['image'];
                     if ($image === NULL) {
-                        if ($users[$i]['gender'] == 'male') $image = '/img/user_male.svg';
-                        elseif ($users[$i]['gender'] == 'female') $image = '/img/user_female.svg';
+                        /*if ($users[$i]['gender'] == 'male')*/ $image = '/img/user_male.svg';
+                        // elseif ($users[$i]['gender'] == 'female') $image = '/img/user_female.svg';
                     } else {
                         $image = '/userimg/users/' . $image;
                     }
                     $names = $users[$i]['firstName'] . ' ' . $users[$i]['lastName'];
+                    $names = $users[$i]['login'];
                     echo '<div class="user" data-user-id="' . $users[$i]['id'] . '" data-is-selected="false">';
-                    echo '    <div class="image" style="background-image: url(\'' . ADDRESS_DATA . $image . '\')"></div>';
+                    echo '    <div class="image" style="background-image: url(\'' . $image . '\')"></div>';
                     echo '    <div class="name">' . $names . '</div>';
                     echo '</div>';
                 }
                 ?>
             </div>
 
-            <div class="nextStepToCreateConversation" style="background-image: url('<?php echo ADDRESS_DATA . '/img/next.svg'; ?>')"></div>
+            <div class="nextStepToCreateConversation" style="background-image: url('<?php echo '/img/next.svg'; ?>')"></div>
         </div>
 
         <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/3footer.php'); ?>
@@ -59,7 +60,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
         <div class="header">
             <div class="logo">
                 <div class="backToStepOne">
-                    <img src="<?php echo ADDRESS_DATA; ?>/img/back.svg" width="40px">
+                    <img src="/img/back.svg" width="40px">
                 </div>
             </div>
 

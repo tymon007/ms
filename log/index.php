@@ -21,7 +21,7 @@ if ($lang != 'eng' &&  $lang != 'pol' && $lang != 'rus') {
 }
 
 if (isset($_POST['submit']) && !empty($_POST['submit'])) {
-    $user = $BDfunc->select('users', ['password', 'salt'], ['username' => $_POST['login']]);
+    $user = $BDfunc->select('users', ['password', 'salt'], ['login' => $_POST['login']]);
     if (count($user) != 0) {
         if (md5(md5($_POST['password']) . $user[0]['salt']) == $user[0]['password']) {
             $_SESSION['login'] = $_POST['login'];
@@ -85,7 +85,7 @@ $arrayLang = parse_ini_file('LangLib/' . $lang . '.ini', true);
 
             <?php
             if (isset($_POST['submit']) && !empty($_POST['submit'])) {
-                $user = $BDfunc->select('users', ['password', 'salt'], ['username' => $_POST['login']]);
+                $user = $BDfunc->select('users', ['password', 'salt'], ['login' => $_POST['login']]);
                 if (count($user) == 0) {
                     echo '<div class="space"></div>';
                     echo '<div class="font-size-normal">';
