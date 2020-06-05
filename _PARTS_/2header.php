@@ -17,14 +17,6 @@
                 <img src="/img/message.svg" width="40px">
             </div>
 
-            <div class="buttElement my_link" data-href="/worlds/">
-                <img src="/img/world.svg" width="40px">
-            </div>
-
-            <div class="buttElement my_link" data-href="/heroes/">
-                <img src="/img/heroes.png" width="40px">
-            </div>
-
             <div class="buttElement my_link" data-href="/menu/">
                 <img src="/img/more_hori.svg" width="40px">
             </div>

@@ -1,0 +1,204 @@
+.see-more {
+    color: blue;
+    font-style: italic;
+}
+
+.pseudoStatus>.activeMyModal[data-is-status="false"] {
+    color: gray;
+}
+
+.container_body .feature .intro {
+    text-align: center;
+}
+
+.container_body .feature .intro .image {
+    width: 75vw;
+    height: 75vw;
+    border: 1px solid rgb(175, 37, 37);
+    border-radius: 50%;
+    margin: 0 auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% auto;
+}
+
+.container_body .feature .myInformations .information {
+    border: 1px solid rgb(221, 62, 62);
+    background-color: rgb(247, 199, 199);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.container_body .feature .myInformations .information .title, .container_body .feature .myInformations .information .verticalLine, .container_body .feature .myInformations .information .data {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.container_body .feature .myInformations .information .title {
+    width: 20%;
+    text-align: center;
+}
+
+.container_body .feature .myInformations .information .verticalLine {
+    height: 10px;
+    border-left: 1px solid rgb(221, 62, 62);
+    margin: 0 10px;
+}
+
+.container_body .feature .myInformations .information .data {
+    width: 70%;
+}
+
+.pseudoStatus {
+    font-size: 1rem;
+}
+
+.autoresizeTextarea {
+    max-height: 45vh;
+}
+
+[data-my-target="status"] {
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+}
+
+#newStatus {
+    height: 25vh;
+}
+
+.forwardedPost.post {
+    border-left: 2px solid rgb(99, 99, 99);
+}
+
+.posts {
+    width: 100vw;
+    background-color: rgb(240, 240, 240);
+    position: relative;
+    left: -10px;
+}
+
+.posts .post {
+    font-size: 0;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+}
+
+.posts .post .who-posted, .posts .post .title, .posts .post .text, .posts .post .likes-comments-forwards {
+    display: block;
+}
+
+.posts .post .who-posted .image-name, .posts .post .who-posted .time-date {
+    display: block;
+}
+
+.posts .post .who-posted .image-name .image, .posts .post .who-posted .image-name .name--time-date {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.posts .post .who-posted .image-name .image {
+    background-color: violet;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% auto;
+}
+
+.posts .post .who-posted .image-name .name--time-date {
+    margin-left: 10px;
+}
+
+.posts .post .who-posted .image-name .name--time-date .name .firstName, .posts .post .who-posted .image-name .name--time-date .name .lastName {
+    font-size: 1.5rem;
+}
+
+.posts .post .who-posted .image-name .name--time-date .name .firstName {
+    margin-right: 5px;
+}
+
+.posts .post .who-posted .name--time-date .time-date .date, .posts .post .who-posted .name--time-date .time-date .at, .posts .post .who-posted .name--time-date .time-date .time {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+.posts .post .who-posted .name--time-date .time-date .time {
+    margin-right: 0;
+}
+
+.posts .post .title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+
+.posts .post .text {
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.posts .post .text .gottenText {
+    font-size: 0;
+}
+
+.posts .post .likes-comments-forwards {
+    margin-left: 20px;
+}
+
+.posts .post .likes-comments-forwards .l-c-f-block {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.posts .post .likes-comments-forwards .l-c-f-block:last-child {
+    margin-right: 0;
+}
+
+.posts .post .likes-comments-forwards .l-c-f-block .value, .posts .post .likes-comments-forwards .l-c-f-block .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.posts .post .likes-comments-forwards .l-c-f-block .value {
+    height: 20px;
+    font-size: 1rem;
+    line-height: 1;
+    color: rgb(51, 51, 51);
+    transition: 0.4s ease 0.125s;
+}
+
+.posts .post .likes-comments-forwards .likes._yes .value {
+    color: rgb(255, 64, 64);
+}
+
+.posts .post .likes-comments-forwards .comments._yes .value {
+    color: rgb(64, 64, 255);
+}
+
+.posts .post .likes-comments-forwards .forwards._yes .value {
+    color: rgb(64, 255, 64);
+}
+
+.posts .post .likes-comments-forwards .l-c-f-block .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% auto;
+    transition: 0.4s ease 0.125s;
+}

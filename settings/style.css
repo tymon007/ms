@@ -1,0 +1,66 @@
+.form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.myPhoto {
+    text-align: center;
+}
+
+.photo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#photo {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: rgba(137, 43, 226, 0.623);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% auto;
+    cursor: pointer;
+}
+
+.media {
+    margin-top: 20px;
+}
+
+.lang_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.lang_img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 10px #f8f9fa;
+}
+
+.selected_lang_img {
+    box-shadow: 0 0 7px 7px #f8f9fa;
+}
+
+.submition-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.submition {
+    display: inline-block;
+}
+
+.submition>button, .submition>button+.cancel {
+    display: inline-block;
+    margin-right: 60px;
+}
+
+.submition>input+.cancel {
+    margin: 0;
+}
+
+.entered-data {
+    background-color: rgb(210, 180, 140);
+}

@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
         <div class='feature'>
             <div class="my_link" data-href="">News</div>
 
-            <div class="my_link" data-href="">Anime and manga</div>
+            <div class="my_link" data-href="/settings">Settings</div>
 
             <div class="my_link" data-href="">Rules</div>
 
@@ -38,11 +38,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/_PARTS_/langPLUSme.php');
 
             <div class="my_link" data-href="">Contact with developers</div>
 
-            <div class="my_link" data-href="">Find users</div>
+            <div class="my_link" data-href="">Credits</div>
 
-            <div class="my_link" data-href="">Tournament</div>
-
-            <div class="my_link" data-href="">List of things which will be working in the future</div>
+            <div class="my_link" data-href="">For future</div>
 
             <div class="my_link" data-href="?exit=true">Exit</div>
         </div>
